@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Vendor, Location, LocationType, LocationImage } from '../types';
+import { Vendor, LocationType, LocationImage } from '../types';
 import { vendorService } from '../services/api';
 
 const VendorDashboard: React.FC = () => {
   const [vendor, setVendor] = useState<Vendor | null>(null);
   const [showBusinessForm, setShowBusinessForm] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string>('');
   const [showGalleryManager, setShowGalleryManager] = useState(false);
   const [galleryImages, setGalleryImages] = useState<LocationImage[]>([]);

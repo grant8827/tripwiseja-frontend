@@ -34,7 +34,6 @@ const LocationDetail: React.FC = () => {
   const [bookingError, setBookingError] = useState('');
 
   const userId = localStorage.getItem('userId');
-  const userName = localStorage.getItem('userName');
 
   useEffect(() => {
     const fetchLocation = async () => {

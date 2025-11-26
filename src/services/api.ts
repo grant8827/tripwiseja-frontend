@@ -1,6 +1,6 @@
 import { Location, Vendor } from '../types';
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
 export const locationService = {
   getAll: async (type?: string): Promise<Location[]> => {
@@ -191,7 +191,8 @@ export const vendorService = {
     }
 
     const result = await response.json();
-    return `http://localhost:5001${result.imageUrl}`;
+    const baseUrl = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:5001';
+    return `${baseUrl}${result.imageUrl}`;
   },
 
   uploadGalleryImage: async (vendorId: number, locationId: number, file: File, caption?: string) => {

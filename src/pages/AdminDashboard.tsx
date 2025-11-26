@@ -142,12 +142,6 @@ const AdminDashboard: React.FC = () => {
   // Calculate stats
   const totalPending = pendingVendors.length;
   const totalApproved = approvedVendors.length;
-  const allVendors = [...pendingVendors, ...approvedVendors];
-  const businessTypes = allVendors.reduce((acc, vendor) => {
-    const type = getBusinessTypeLabel(vendor.businessType);
-    acc[type] = (acc[type] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
 
   const displayVendors = activeTab === 'pending' ? pendingVendors : approvedVendors;
 
