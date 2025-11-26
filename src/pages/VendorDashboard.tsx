@@ -319,7 +319,6 @@ const VendorDashboard: React.FC = () => {
       
       setShowBusinessForm(false);
       setIsEditMode(false);
-      setSelectedImage(null);
       setImagePreview('');
       setBusinessData({
         name: '',
