@@ -234,8 +234,6 @@ const VendorDashboard: React.FC = () => {
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setSelectedImage(file);
-      
       // Create preview URL for immediate display
       const reader = new FileReader();
       reader.onloadend = () => {
